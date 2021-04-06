@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectRune.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace project_rune
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SkillsPage();
         }
 
         protected override void OnStart()

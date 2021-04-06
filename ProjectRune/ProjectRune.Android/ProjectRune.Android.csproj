@@ -8,7 +8,7 @@
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>project_rune.Droid</RootNamespace>
-    <AssemblyName>project-rune.Android</AssemblyName>
+    <AssemblyName>ProjectRune.Android</AssemblyName>
     <Deterministic>True</Deterministic>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -89,9 +89,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\project-rune\project-rune.csproj">
+    <ProjectReference Include="..\ProjectRune\ProjectRune.csproj">
       <Project>{C996708D-0FE7-4BB0-AF04-C94ADA98C35D}</Project>
-      <Name>project-rune</Name>
+      <Name>ProjectRune</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
