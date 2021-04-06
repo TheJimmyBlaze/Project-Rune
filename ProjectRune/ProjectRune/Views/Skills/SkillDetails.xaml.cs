@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ProjectRune.Pages
+namespace ProjectRune.Views.Skills
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SkillsPage : ContentPage
+    public partial class SkillDetails : ContentView
     {
-        public SkillsPage()
+        public SkillDetails()
         {
             InitializeComponent();
         }
