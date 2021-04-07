@@ -40,7 +40,8 @@
             </Frame>
 
             <Frame>
-                <Button Style="{StaticResource MenuItemButton}"/>
+                <Button Style="{StaticResource MenuItemButton}"
+                        ImageSource="Inventory"/>
             </Frame>
 
             <Frame>
@@ -49,7 +50,8 @@
             </Frame>
 
             <Frame>
-                <Button Style="{StaticResource MenuItemButton}"/>
+                <Button Style="{StaticResource MenuItemButton}"
+                        ImageSource="Hamburger"/>
             </Frame>
 
         </StackLayout>
