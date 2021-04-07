@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:navigation="clr-namespace:ProjectRune.Views.Navigation" 
-             xmlns:skills="clr-namespace:ProjectRune.Views.Skills" 
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:views="clr-namespace:ProjectRune.Views"
              x:Class="ProjectRune.Pages.SkillsPage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="{StaticResource MidBrown}">
 
-            <navigation:QuickMenu/>
+            <views:QuickMenuView x:Name="QuickMenu"/>
+
+            <Label Text="{Binding ActiveMenuButton, Source={x:Reference QuickMenu}}"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource LightBrown}"
+                   FontSize="Large"/>
 
         </StackLayout>
     </ContentPage.Content>

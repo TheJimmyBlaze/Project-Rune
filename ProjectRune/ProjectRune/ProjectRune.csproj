@@ -16,13 +16,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\QuickMenuView.xaml.cs">
+      <DependentUpon>QuickMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SkillDetailsView.xaml.cs">
+      <DependentUpon>SkillDetailsView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Pages\SkillsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Navigation\QuickMenu.xaml">
+    <EmbeddedResource Update="Views\QuickMenuView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Skills\SkillDetails.xaml">
+    <EmbeddedResource Update="Views\SkillDetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

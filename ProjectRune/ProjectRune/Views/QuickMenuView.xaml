@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base"
+             x:DataType="viewModels:QuickMenuViewModel"
+             x:Class="ProjectRune.Views.QuickMenuView"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True">
+
+    <ContentView.Content>
+
+        <StackLayout Orientation="Horizontal"
+                     Spacing="10"
+                     Padding="8"
+                     BackgroundColor="{StaticResource DarkBrown}">
+
+            <StackLayout.Resources>
+
+                <Style TargetType="Frame">
+                    <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="CornerRadius" Value="4"/>
+                    <Setter Property="Padding" Value="0"/>
+                </Style>
+
+                <Style x:Key="MenuItemButton"
+                       TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="{StaticResource LightBrown}"/>
+                </Style>
+
+            </StackLayout.Resources>
+
+            <Frame>
+                <Button Command="{Binding SetActiveMenuButton}"
+                        CommandParameter="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Skills}"
+                        ImageSource="Skills">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                               BasedOn="{StaticResource MenuItemButton}">
+                            <Style.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding ActiveMenuButton}"
+                                             Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Skills}">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Frame>
+
+            <Frame>
+                <Button Command="{Binding SetActiveMenuButton}"
+                        CommandParameter="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Inventory}"
+                        ImageSource="Inventory">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                               BasedOn="{StaticResource MenuItemButton}">
+                            <Style.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding ActiveMenuButton}"
+                                             Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Inventory}">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Frame>
+
+            <Frame>
+                <Button Command="{Binding SetActiveMenuButton}"
+                        CommandParameter="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Quests}"
+                        ImageSource="Quests">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                               BasedOn="{StaticResource MenuItemButton}">
+                            <Style.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding ActiveMenuButton}"
+                                             Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Quests}">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Frame>
+
+            <Frame>
+                <Button Command="{Binding SetActiveMenuButton}"
+                        CommandParameter="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Hamburger}"
+                        ImageSource="Hamburger">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                               BasedOn="{StaticResource MenuItemButton}">
+                            <Style.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding ActiveMenuButton}"
+                                             Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Hamburger}">
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Frame>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
