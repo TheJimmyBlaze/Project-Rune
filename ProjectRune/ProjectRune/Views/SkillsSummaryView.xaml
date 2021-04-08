@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ProjectRune.Models"
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base"
+             x:DataType="viewModels:SkillsSummaryViewModel"
+             x:Class="ProjectRune.Views.SkillsSummaryView"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True">
+    <ContentView.Content>
+        <ScrollView>
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding Skills}"
+                        Direction="Row"
+                        JustifyContent="Center"
+                        Wrap="Wrap"
+                        Margin="4">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Skill">
+                        
+                        <!--
+                        <Button ImageSource="{Binding Image}"
+                                Text="{Binding DisplayName}"
+                                BackgroundColor="{Binding Colour}"
+                                TextColor="{StaticResource YellowText}"
+                                FontFamily="Runescape"
+                                Margin="4, 0"
+                                WidthRequest="384"/>
+                        -->
+
+                        <Frame Margin="4, 0"
+                               Padding="0, 4"
+                               WidthRequest="384"
+                               BackgroundColor="Transparent">
+
+                            <Grid>
+
+                                <Grid.Resources>
+
+                                    <Style TargetType="Label">
+                                        <Setter Property="TextColor" Value="{StaticResource YellowText}"/>
+                                        <Setter Property="FontFamily" Value="Runescape"/>
+                                        <Setter Property="FontSize" Value="Large"/>
+                                    </Style>
+                                </Grid.Resources>
+
+                                <Frame Padding="0"
+                                       BackgroundColor="Transparent">
+                                    <Button BackgroundColor="{StaticResource DarkBrown}"/>
+                                </Frame>
+
+                                <Label Text="{Binding DisplayName}"
+                                       InputTransparent="True"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+
+                                <Frame BackgroundColor="{Binding Colour}"
+                                       Padding="0"
+                                       WidthRequest="80"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="FillAndExpand"
+                                       InputTransparent="True">
+
+                                    <Image Source="{Binding Image}"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           InputTransparent="True"/>
+                                </Frame>
+
+
+                                <Frame BackgroundColor="{StaticResource MidGray}"
+                                       Padding="0"
+                                       WidthRequest="80"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="FillAndExpand"
+                                       InputTransparent="True">
+
+                                    <Label Text="{Binding DisplayLevel}"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           InputTransparent="True"/>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

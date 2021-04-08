@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ProjectRune.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SkillDetailsView : ContentView
+    public partial class SkillsSummaryView : ContentView
     {
-        public SkillDetailsView()
+        public SkillsSummaryView()
         {
             InitializeComponent();
         }

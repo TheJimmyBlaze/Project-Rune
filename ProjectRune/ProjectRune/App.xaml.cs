@@ -3,6 +3,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("runescape_uf.ttf", Alias = "Runescape")]
 namespace project_rune
 {
     public partial class App : Application

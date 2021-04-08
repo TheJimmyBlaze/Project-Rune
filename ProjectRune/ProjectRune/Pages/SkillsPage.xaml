@@ -5,14 +5,25 @@
              xmlns:views="clr-namespace:ProjectRune.Views"
              x:Class="ProjectRune.Pages.SkillsPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource MidBrown}">
+        <StackLayout BackgroundColor="{StaticResource MidBrown}"
+                     Spacing="0">
 
             <views:QuickMenuView x:Name="QuickMenu"/>
 
-            <Label Text="{Binding ActiveMenuButton, Source={x:Reference QuickMenu}}"
-                   HorizontalOptions="Center"
-                   TextColor="{StaticResource LightBrown}"
-                   FontSize="Large"/>
+            <views:SkillsSummaryView>
+                <views:SkillsSummaryView.Style>
+                    <Style TargetType="views:SkillsSummaryView">
+                        <Setter Property="IsVisible" Value="False"/>
+                        <Style.Triggers>
+                            <DataTrigger TargetType="views:SkillsSummaryView" 
+                                         Binding="{Binding ActiveMenuButton, Source={x:Reference QuickMenu}}" 
+                                         Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Skills}">
+                                <Setter Property="IsVisible" Value="True"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </views:SkillsSummaryView.Style>
+            </views:SkillsSummaryView>
 
         </StackLayout>
     </ContentPage.Content>
