@@ -6,7 +6,8 @@
              xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base"
              x:DataType="viewModels:SkillsSummaryViewModel"
              x:Class="ProjectRune.Views.SkillsSummaryView"
-             viewModelBase:ViewModelLocator.AutoWireViewModel="True">
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True"
+             IsVisible="{Binding DisplaySkillView}">
     
     <ContentView.Content>
         <ScrollView>

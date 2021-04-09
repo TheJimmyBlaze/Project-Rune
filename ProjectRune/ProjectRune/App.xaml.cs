@@ -1,4 +1,5 @@
 ﻿using ProjectRune.Pages;
+using ProjectRune.Services;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,12 +12,13 @@ namespace project_rune
         public App()
         {
             InitializeComponent();
-
-            MainPage = new SkillsPage();
         }
 
         protected override void OnStart()
         {
+            DependencyService.Register<NavigationService>();
+
+            DependencyService.Get<NavigationService>().Initialize();
         }
 
         protected override void OnSleep()

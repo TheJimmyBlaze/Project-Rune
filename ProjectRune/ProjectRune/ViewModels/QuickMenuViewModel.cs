@@ -5,30 +5,18 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static ProjectRune.Services.NavigationService;
 
 namespace ProjectRune.ViewModels
 {
     public class QuickMenuViewModel : ViewModelBase
     {
-        public enum QuickMenuButtons
+        public NavigationSheet ActiveNavigationSheet { get => navService.ActiveNavigationSheet; }
+        public ICommand SetActiveNavigationSheet => new Command<NavigationSheet>(active => navService.ActiveNavigationSheet = active);
+
+        public QuickMenuViewModel()
         {
-            Nothing,
-            Skills,
-            Inventory,
-            Quests,
-            Hamburger
+            navService.ActiveNavigationSheetChanged += delegate { OnPropertyChanged(nameof(ActiveNavigationSheet)); };
         }
-
-        private QuickMenuButtons activeMenuButton = QuickMenuButtons.Skills;
-        public QuickMenuButtons ActiveMenuButton
-        {
-            get { return activeMenuButton; }
-            set { SetProperty(ref activeMenuButton, value, onChanged: delegate { OnActiveMenuButtonChanged(); }); }
-        }
-
-        public ICommand SetActiveMenuButton => new Command<QuickMenuButtons>(active => ActiveMenuButton = active);
-        public EventHandler ActiveMenuButtonChanged;
-
-        private void OnActiveMenuButtonChanged() => ActiveMenuButtonChanged.Invoke(this, null);
     }
 }

@@ -16,27 +16,9 @@ namespace ProjectRune.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuickMenuView : ContentView, INotifyPropertyChanged
     {
-        public static BindableProperty ActiveMenuButtonProperty =
-            BindableProperty.Create("ActiveMenuButton",
-                                    typeof(QuickMenuButtons),
-                                    typeof(QuickMenuView));
-
-        public QuickMenuButtons ActiveMenuButton
-        {
-            get
-            {
-                if(BindingContext is QuickMenuViewModel model)
-                    return model.ActiveMenuButton;
-                return QuickMenuButtons.Nothing;
-            }
-        }
-
         public QuickMenuView()
         {
             InitializeComponent();
-
-            if (BindingContext is QuickMenuViewModel model)
-                model.ActiveMenuButtonChanged += delegate { OnPropertyChanged(nameof(ActiveMenuButton)); };
         }
     }
 }

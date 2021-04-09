@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ProjectRune.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SkillsPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public SkillsPage()
+        public MainPage()
         {
             InitializeComponent();
         }

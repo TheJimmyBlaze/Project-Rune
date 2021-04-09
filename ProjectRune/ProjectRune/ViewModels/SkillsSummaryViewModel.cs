@@ -3,11 +3,14 @@ using ProjectRune.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static ProjectRune.Services.NavigationService;
 
 namespace ProjectRune.ViewModels
 {
     public class SkillsSummaryViewModel : ViewModelBase
     {
+        public bool DisplaySkillView { get => navService.ActiveNavigationSheet == NavigationSheet.Skills; }
+
         private List<Skill> skills;
         public List<Skill> Skills
         {
@@ -28,6 +31,11 @@ namespace ProjectRune.ViewModels
                 new Skill() { NaturalID = "Defence" },
                 new Skill() { NaturalID = "Hitpoints" }
             };
+        }
+
+        public SkillsSummaryViewModel()
+        {
+            navService.ActiveNavigationSheetChanged += delegate { OnPropertyChanged(nameof(DisplaySkillView)); };
         }
     }
 }
