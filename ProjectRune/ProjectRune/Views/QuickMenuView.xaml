@@ -29,11 +29,11 @@
                     ImageSource="Skills">
                 <Button.Style>
                     <Style TargetType="Button"
-                            BasedOn="{StaticResource MenuItemButton}">
+                           BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
-                                            Binding="{Binding ActiveMenuButton}"
-                                            Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Skills}">
+                                         Binding="{Binding ActiveMenuButton}"
+                                         Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Skills}">
                                 <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
                             </DataTrigger>
                         </Style.Triggers>
@@ -46,11 +46,11 @@
                     ImageSource="Inventory">
                 <Button.Style>
                     <Style TargetType="Button"
-                            BasedOn="{StaticResource MenuItemButton}">
+                           BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
-                                            Binding="{Binding ActiveMenuButton}"
-                                            Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Inventory}">
+                                         Binding="{Binding ActiveMenuButton}"
+                                         Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Inventory}">
                                 <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
                             </DataTrigger>
                         </Style.Triggers>
@@ -63,11 +63,11 @@
                     ImageSource="Quests">
                 <Button.Style>
                     <Style TargetType="Button"
-                            BasedOn="{StaticResource MenuItemButton}">
+                           BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
-                                            Binding="{Binding ActiveMenuButton}"
-                                            Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Quests}">
+                                         Binding="{Binding ActiveMenuButton}"
+                                         Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Quests}">
                                 <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
                             </DataTrigger>
                         </Style.Triggers>
@@ -80,11 +80,11 @@
                     ImageSource="Hamburger">
                 <Button.Style>
                     <Style TargetType="Button"
-                            BasedOn="{StaticResource MenuItemButton}">
+                           BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
-                                            Binding="{Binding ActiveMenuButton}"
-                                            Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Hamburger}">
+                                         Binding="{Binding ActiveMenuButton}"
+                                         Value="{x:Static viewModels:QuickMenuViewModel+QuickMenuButtons.Hamburger}">
                                 <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
                             </DataTrigger>
                         </Style.Triggers>

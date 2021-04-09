@@ -7,6 +7,7 @@
              x:DataType="viewModels:SkillsSummaryViewModel"
              x:Class="ProjectRune.Views.SkillsSummaryView"
              viewModelBase:ViewModelLocator.AutoWireViewModel="True">
+    
     <ContentView.Content>
         <ScrollView>
 
@@ -19,7 +20,7 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="models:Skill">
 
-                        <Frame Margin="4, 0"
+                        <ContentView Margin="4, 0"
                                Padding="0, 4"
                                WidthRequest="384"
                                BackgroundColor="Transparent">
@@ -27,7 +28,6 @@
                             <Grid>
 
                                 <Grid.Resources>
-
                                     <Style TargetType="Label">
                                         <Setter Property="TextColor" Value="{StaticResource YellowText}"/>
                                         <Setter Property="FontFamily" Value="Runescape"/>
@@ -35,40 +35,29 @@
                                     </Style>
                                 </Grid.Resources>
 
-                                <Grid>
+                                <!-- This guy's in a content view since he would otherwise cause wierd interactions with other controls on the grid whes pressed -->
+                                <ContentView>
                                     <Button BackgroundColor="{StaticResource DarkBrown}"/>
-                                </Grid>
+                                </ContentView>
 
                                 <Label Text="{Binding DisplayName}"
                                        InputTransparent="True"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"/>
-
-                                <Grid Padding="0"
-                                      WidthRequest="80"
-                                      HorizontalOptions="Start"
-                                      VerticalOptions="FillAndExpand"
-                                      InputTransparent="True">
-
-                                    <Image Source="{Binding Image}"
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Center"
-                                           InputTransparent="True"/>
-                                </Grid>
-
-
-                                <Grid WidthRequest="80"
-                                      HorizontalOptions="End"
-                                      VerticalOptions="FillAndExpand"
-                                      InputTransparent="True">
-
-                                    <Label Text="{Binding DisplayLevel}"
-                                           VerticalOptions="Center"
-                                           HorizontalOptions="Center"
-                                           InputTransparent="True"/>
-                                </Grid>
+                                
+                                <Image Source="{Binding Image}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Start"
+                                       Margin="24, 0"
+                                       InputTransparent="True"/>
+                                
+                                <Label Text="{Binding DisplayLevel}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End"
+                                       Margin="24, 0"
+                                       InputTransparent="True"/>
                             </Grid>
-                        </Frame>
+                        </ContentView>
                         
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
