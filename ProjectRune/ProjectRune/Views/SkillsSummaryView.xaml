@@ -18,16 +18,6 @@
 
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="models:Skill">
-                        
-                        <!--
-                        <Button ImageSource="{Binding Image}"
-                                Text="{Binding DisplayName}"
-                                BackgroundColor="{Binding Colour}"
-                                TextColor="{StaticResource YellowText}"
-                                FontFamily="Runescape"
-                                Margin="4, 0"
-                                WidthRequest="384"/>
-                        -->
 
                         <Frame Margin="4, 0"
                                Padding="0, 4"
@@ -45,42 +35,38 @@
                                     </Style>
                                 </Grid.Resources>
 
-                                <Frame Padding="0"
-                                       BackgroundColor="Transparent">
+                                <Grid>
                                     <Button BackgroundColor="{StaticResource DarkBrown}"/>
-                                </Frame>
+                                </Grid>
 
                                 <Label Text="{Binding DisplayName}"
                                        InputTransparent="True"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"/>
 
-                                <Frame BackgroundColor="{Binding Colour}"
-                                       Padding="0"
-                                       WidthRequest="80"
-                                       HorizontalOptions="Start"
-                                       VerticalOptions="FillAndExpand"
-                                       InputTransparent="True">
+                                <Grid Padding="0"
+                                      WidthRequest="80"
+                                      HorizontalOptions="Start"
+                                      VerticalOptions="FillAndExpand"
+                                      InputTransparent="True">
 
                                     <Image Source="{Binding Image}"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center"
                                            InputTransparent="True"/>
-                                </Frame>
+                                </Grid>
 
 
-                                <Frame BackgroundColor="{StaticResource MidGray}"
-                                       Padding="0"
-                                       WidthRequest="80"
-                                       HorizontalOptions="End"
-                                       VerticalOptions="FillAndExpand"
-                                       InputTransparent="True">
+                                <Grid WidthRequest="80"
+                                      HorizontalOptions="End"
+                                      VerticalOptions="FillAndExpand"
+                                      InputTransparent="True">
 
                                     <Label Text="{Binding DisplayLevel}"
                                            VerticalOptions="Center"
                                            HorizontalOptions="Center"
                                            InputTransparent="True"/>
-                                </Frame>
+                                </Grid>
                             </Grid>
                         </Frame>
                         

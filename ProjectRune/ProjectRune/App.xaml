@@ -12,7 +12,7 @@
 
         <Color x:Key="Active">#7A2920</Color>
 
-        <Color x:Key="YellowText">#FFFF00</Color>
+        <Color x:Key="YellowText">#C1C100</Color>
         <Color x:Key="BlackBackground">#000001</Color>
         
     </Application.Resources>
