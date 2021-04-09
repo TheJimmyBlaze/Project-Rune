@@ -23,21 +23,10 @@ namespace ProjectRune.ViewModels
         {
             return new List<Skill>()
             {
-                new Skill()
-                {
-                    NaturalID = "Attack",
-                    ColourHex = "4A0C06"
-                },
-                new Skill()
-                {
-                    NaturalID = "Strength",
-                    ColourHex = "015534"
-                },
-                new Skill()
-                {
-                    NaturalID = "Defence",
-                    ColourHex = "657CC9"
-                }
+                new Skill() { NaturalID = "Attack" },
+                new Skill() { NaturalID = "Strength" },
+                new Skill() { NaturalID = "Defence" },
+                new Skill() { NaturalID = "Hitpoints" }
             };
         }
     }
