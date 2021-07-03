@@ -9,7 +9,7 @@ namespace ProjectRune.ViewModels
 {
     public class SkillsSummaryViewModel : ViewModelBase
     {
-        public bool DisplaySkillView { get => navService.ActiveNavigationSheet == NavigationSheet.Skills; }
+        public bool DisplaySkillView { get => navService.ActiveNavigationSheet == NavigationSheet.Settings; }
 
         private List<Skill> skills;
         public List<Skill> Skills

@@ -5,14 +5,14 @@
              xmlns:views="clr-namespace:ProjectRune.Views"
              x:Class="ProjectRune.Pages.MainPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource MidBrown}"
+        <StackLayout BackgroundColor="{StaticResource MidPrimary}"
                      Spacing="0">
 
-            <views:QuickMenuView/>
+            <!-- Fills the space between the view and the quick menu -->
+            <BoxView VerticalOptions="FillAndExpand"/>
 
-            <views:SkillsSummaryView/>
-
-            <Label Text="Boats"/>
+            <views:QuickMenuView
+                VerticalOptions="End"/>
 
         </StackLayout>
     </ContentPage.Content>

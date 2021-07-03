@@ -38,7 +38,7 @@
 
                                 <!-- This guy's in a content view since he would otherwise cause wierd interactions with other controls on the grid whes pressed -->
                                 <ContentView>
-                                    <Button BackgroundColor="{StaticResource DarkBrown}"/>
+                                    <Button BackgroundColor="{StaticResource DarkPrimary}"/>
                                 </ContentView>
 
                                 <Label Text="{Binding DisplayName}"
