@@ -89,22 +89,13 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\quests.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ProjectRune\ProjectRune.csproj">
       <Project>{C996708D-0FE7-4BB0-AF04-C94ADA98C35D}</Project>
       <Name>ProjectRune</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\skills.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\inventory.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\hamburger.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\defence.png" />
@@ -125,7 +116,7 @@
     <AndroidResource Include="Resources\drawable\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\index.png" />
+    <AndroidResource Include="Resources\drawable\skills.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

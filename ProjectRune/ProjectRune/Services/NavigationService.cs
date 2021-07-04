@@ -10,13 +10,13 @@ namespace ProjectRune.Services
     {
         public enum NavigationSheet
         {
+            Skills,
             Inventory,
             Equipment,
-            Index,
             Settings
         }
 
-        private NavigationSheet activeNavigationSheet = NavigationSheet.Inventory;
+        private NavigationSheet activeNavigationSheet = NavigationSheet.Skills;
         public NavigationSheet ActiveNavigationSheet
         {
             get => activeNavigationSheet;
