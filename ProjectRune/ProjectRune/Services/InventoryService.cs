@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace ProjectRune.Services
 {
@@ -18,6 +19,8 @@ namespace ProjectRune.Services
                 return contents;
             }
         }
+
+        private readonly RandomService random = DependencyService.Get<RandomService>();
 
         public EventHandler ContentsChanged;
         private void OnContentsChanged() => ContentsChanged?.Invoke(this, null);
@@ -38,6 +41,21 @@ namespace ProjectRune.Services
             }
 
             OnContentsChanged();
+        }
+
+        public void GenerateTestItem()
+        {
+            List<Item> candidates = new List<Item>()
+            {
+                new Item("bronze_ingot"),
+                new Item("pine_log"),
+                new Item("stone_chunk"),
+            };
+
+            Random rand = random.Random;
+            Item chosen = candidates[rand.Next(3)];
+
+            AddItem(chosen);
         }
     }
 }

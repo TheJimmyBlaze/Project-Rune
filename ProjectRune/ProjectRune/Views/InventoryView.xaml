@@ -15,24 +15,22 @@
 
             <Label FontSize="Title">Inventory</Label>
 
-            <ScrollView>
+            <ListView ItemsSource="{Binding Items}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:ItemStack">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                            BackgroundColor="{StaticResource LightPrimary}">
+                                <Image Source="{Binding Item.Image}"/>
+                                <Label Text="{Binding Item.DisplayName}"/>
+                                <Label Text=":"/>
+                                <Label Text="{Binding Count}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-                <ListView ItemsSource="{Binding Items}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="models:ItemStack">
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Item.Image}"/>
-                                    <Label Text="{Binding Item.DisplayName}"/>
-                                    <Label Text=":"/>
-                                    <Label Text="{Binding Count}"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-            </ScrollView>
 
             <Button Command="{Binding AddTestItem}"
                     Text="Add Test Item"/>

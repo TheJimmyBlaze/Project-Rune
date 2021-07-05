@@ -19,7 +19,7 @@ namespace ProjectRune.ViewModels
 
         private readonly InventoryService inventoryService = DependencyService.Get<InventoryService>();
 
-        public ICommand AddTestItem => new Command(delegate() { inventoryService.AddItem(new Item("bronze_ingot")); });
+        public ICommand AddTestItem => new Command(delegate() { inventoryService.GenerateTestItem(); });
 
         public InventoryViewModel()
         {

@@ -13,6 +13,8 @@ namespace project_rune
 
         protected override void OnStart()
         {
+            DependencyService.Register<RandomService>();
+
             DependencyService.Register<NavigationService>();
             DependencyService.Register<InventoryService>();
 
