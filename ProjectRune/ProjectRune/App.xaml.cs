@@ -1,8 +1,5 @@
-﻿using ProjectRune.Pages;
-using ProjectRune.Services;
-using System;
+﻿using ProjectRune.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 [assembly: ExportFont("runescape_uf.ttf", Alias = "Runescape")]
 namespace project_rune
@@ -17,6 +14,7 @@ namespace project_rune
         protected override void OnStart()
         {
             DependencyService.Register<NavigationService>();
+            DependencyService.Register<InventoryService>();
 
             DependencyService.Get<NavigationService>().Initialize();
         }

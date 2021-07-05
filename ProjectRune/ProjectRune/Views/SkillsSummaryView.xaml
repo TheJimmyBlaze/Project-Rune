@@ -12,7 +12,7 @@
     <ContentView.Content>
         <ScrollView>
 
-            <FlexLayout BindableLayout.ItemsSource="{Binding Skills}"
+            <FlexLayout BindableLayout.ItemsSource="{Binding Skills, Mode=OneWay}"
                         Direction="Row"
                         JustifyContent="Center"
                         Wrap="Wrap"
@@ -22,9 +22,9 @@
                     <DataTemplate x:DataType="models:Skill">
 
                         <ContentView Margin="4, 0"
-                               Padding="0, 4"
-                               WidthRequest="384"
-                               BackgroundColor="Transparent">
+                                     Padding="0, 4"
+                                     WidthRequest="384"
+                                     BackgroundColor="Transparent">
 
                             <Grid>
 

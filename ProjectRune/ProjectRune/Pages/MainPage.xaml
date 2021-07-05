@@ -8,11 +8,11 @@
         <StackLayout BackgroundColor="{StaticResource MidPrimary}"
                      Spacing="0">
 
-            <!-- Fills the space between the view and the quick menu -->
-            <BoxView VerticalOptions="FillAndExpand"/>
+            <views:SkillsSummaryView VerticalOptions="Start"/>
 
-            <views:QuickMenuView
-                VerticalOptions="End"/>
+            <views:InventoryView VerticalOptions="Start"/>
+
+            <views:QuickMenuView VerticalOptions="End"/>
 
         </StackLayout>
     </ContentPage.Content>

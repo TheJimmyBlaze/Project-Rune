@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ProjectRune.Models"
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base"
+             x:DataType="viewModels:InventoryViewModel"
+             x:Class="ProjectRune.Views.InventoryView"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True"
+             IsVisible="{Binding DisplayInventoryView}">
+
+    <ContentView.Content>
+
+        <StackLayout Orientation="Vertical">
+
+            <Label FontSize="Title">Inventory</Label>
+
+            <ScrollView>
+
+                <ListView ItemsSource="{Binding Items}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ItemStack">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Item.Image}"/>
+                                    <Label Text="{Binding Item.DisplayName}"/>
+                                    <Label Text=":"/>
+                                    <Label Text="{Binding Count}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </ScrollView>
+
+            <Button Command="{Binding AddTestItem}"
+                    Text="Add Test Item"/>
+
+        </StackLayout>
+        
+    </ContentView.Content>
+</ContentView>

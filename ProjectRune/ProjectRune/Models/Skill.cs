@@ -10,7 +10,7 @@ namespace ProjectRune.Models
     {
         public string NaturalID { get; set; }
         public string Image { get => string.Format("{0}.png", NaturalID); }
-        public string DisplayName { get => string.Format("{0}{1}", NaturalID.Substring(0, 1), NaturalID.Substring(1)); }
+        public string DisplayName { get => string.Format("{0}{1}", NaturalID.Substring(0, 1).ToUpper(), NaturalID.Substring(1)); }
 
         public string PrimaryColourHex { get; set; }
         public string SecondaryColourHex { get; set; }
