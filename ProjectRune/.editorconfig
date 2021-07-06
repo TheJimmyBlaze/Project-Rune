@@ -11,3 +11,9 @@ csharp_style_unused_value_assignment_preference = unused_local_variable
 
 # IDE0022: Use block body for methods
 dotnet_diagnostic.IDE0022.severity = none
+
+# IDE0046: Convert to conditional expression
+dotnet_diagnostic.IDE0046.severity = none
+
+# IDE0025: Use block body for properties
+dotnet_diagnostic.IDE0025.severity = none

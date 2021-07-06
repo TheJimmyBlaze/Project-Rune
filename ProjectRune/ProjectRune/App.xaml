@@ -19,17 +19,22 @@
 
         <RadialGradientBrush x:Key="ButtonGradient">
             <GradientStop Color="{StaticResource BrightPrimary}"
-                                              Offset="0.1"/>
+                          Offset="0.1"/>
             <GradientStop Color="{StaticResource LightPrimary}"
-                                              Offset="0.9"/>
+                          Offset="0.9"/>
         </RadialGradientBrush>
 
         <RadialGradientBrush x:Key="ActiveButtonGradient">
                     <GradientStop Color="{StaticResource BrightActive}"
-                                              Offset="0.1"/>
+                                  Offset="0.1"/>
                     <GradientStop Color="{StaticResource LightActive}"
-                                              Offset="0.9"/>
+                                  Offset="0.9"/>
         </RadialGradientBrush>
-        
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource YellowText}"/>
+            <Setter Property="FontFamily" Value="Runescape"/>
+        </Style>
+
     </Application.Resources>
 </Application>

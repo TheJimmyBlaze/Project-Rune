@@ -77,8 +77,10 @@
                 </Button.Style>
             </Button>
 
-            <Button Command="{Binding SetActiveNavigationSheet}"
+            <!--<Button Command="{Binding SetActiveNavigationSheet}"
                     CommandParameter="{x:Static services:NavigationService+NavigationSheet.Settings}"
+                    ImageSource="settings">-->
+            <Button Command="{Binding AddTestItem}"
                     ImageSource="settings">
                 <Button.Style>
                     <Style TargetType="Button"

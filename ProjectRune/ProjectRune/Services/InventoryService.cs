@@ -1,59 +1,58 @@
 ﻿using ProjectRune.Models;
+using ProjectRune.Models.ItemModels;
+using ProjectRune.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace ProjectRune.Services
 {
     public class InventoryService
     {
-        private Dictionary<string, ItemStack> contents;
-        public Dictionary<string, ItemStack> Contents
+        private ModifiableObservableCollection<ItemStack> contents;
+        public ModifiableObservableCollection<ItemStack> Contents
         {
             get
             {
                 if (contents == null)
-                    contents = new Dictionary<string, ItemStack>();
+                    contents = new ModifiableObservableCollection<ItemStack>();
                 return contents;
             }
         }
 
         private readonly RandomService random = DependencyService.Get<RandomService>();
 
-        public EventHandler ContentsChanged;
-        private void OnContentsChanged() => ContentsChanged?.Invoke(this, null);
-
         public void AddItem(Item item, int count = 1)
         {
-            string id = item.NaturalID;
-
-            if (Contents.ContainsKey(id))
+            ItemStack stack = Contents.SingleOrDefault(existing => existing.Item == item);
+            if (stack == null)
             {
-                ItemStack stack = contents[id];
-                stack.Count += count;
+                stack = new ItemStack(item, count);
+                Contents.Add(stack);
             }
             else
             {
-                ItemStack newStack = new ItemStack(item, count);
-                Contents.Add(id, newStack);
+                stack.Add(count);
             }
-
-            OnContentsChanged();
         }
 
         public void GenerateTestItem()
         {
             List<Item> candidates = new List<Item>()
             {
-                new Item("bronze_ingot"),
-                new Item("pine_log"),
-                new Item("stone_chunk"),
+                ItemDictionary.StoneChunk,
+                ItemDictionary.PineLog,
+                ItemDictionary.BronzeIngot,
+                ItemDictionary.ToolHandle,
+                ItemDictionary.StoneAxe,
+                ItemDictionary.StonePick,
             };
 
-            Random rand = random.Random;
-            Item chosen = candidates[rand.Next(3)];
+            Item chosen = candidates[random.Next(candidates.Count)];
 
             AddItem(chosen);
         }

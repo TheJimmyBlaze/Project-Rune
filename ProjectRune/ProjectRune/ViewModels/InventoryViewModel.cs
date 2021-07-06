@@ -1,5 +1,7 @@
 ﻿using ProjectRune.Models;
+using ProjectRune.Models.ItemModels;
 using ProjectRune.Services;
+using ProjectRune.Utils;
 using ProjectRune.ViewModels.Base;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,16 +17,11 @@ namespace ProjectRune.ViewModels
     {
         public bool DisplayInventoryView { get => navService.ActiveNavigationSheet == NavigationSheet.Inventory; }
 
-        public List<ItemStack> Items { get => inventoryService.Contents.Values.ToList(); }
-
-        private readonly InventoryService inventoryService = DependencyService.Get<InventoryService>();
-
-        public ICommand AddTestItem => new Command(delegate() { inventoryService.GenerateTestItem(); });
+        public InventoryService InventoryService { get => DependencyService.Get<InventoryService>(); }
 
         public InventoryViewModel()
         {
             navService.ActiveNavigationSheetChanged += delegate { OnPropertyChanged(nameof(DisplayInventoryView)); };
-            inventoryService.ContentsChanged += delegate { OnPropertyChanged(nameof(Items)); };
         }
     }
 }
