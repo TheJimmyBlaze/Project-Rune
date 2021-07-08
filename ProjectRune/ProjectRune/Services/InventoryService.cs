@@ -45,11 +45,18 @@ namespace ProjectRune.Services
             List<Item> candidates = new List<Item>()
             {
                 ItemDictionary.StoneChunk,
+                ItemDictionary.TinOre,
+                ItemDictionary.CopperOre,
+                ItemDictionary.IronOre,
                 ItemDictionary.PineLog,
                 ItemDictionary.BronzeIngot,
+                ItemDictionary.IronIngot,
+                ItemDictionary.SteelIngot,
                 ItemDictionary.ToolHandle,
                 ItemDictionary.StoneAxe,
                 ItemDictionary.StonePick,
+                ItemDictionary.BronzeAxe,
+                ItemDictionary.BronzePick
             };
 
             Item chosen = candidates[random.Next(candidates.Count)];

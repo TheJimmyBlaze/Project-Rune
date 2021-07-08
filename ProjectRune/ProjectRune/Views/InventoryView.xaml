@@ -10,54 +10,64 @@
              IsVisible="{Binding DisplayInventoryView}">
 
     <ContentView.Content>
-        <ScrollView>
-        
-            <FlexLayout BindableLayout.ItemsSource="{Binding InventoryService.Contents, Mode=OneWay}"
-                        Direction="Row"
-                        JustifyContent="Start"
-                        Wrap="Wrap"
-                        Margin="4">
+        <StackLayout>
 
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="models:ItemStack">
-
-                        <ContentView Margin="4, 0"
-                                     Padding="0, 4">
-
-                            <Grid HeightRequest="68">
-
-                                <Frame CornerRadius="3"
-                                       Padding="4"
-                                       BackgroundColor="{StaticResource LightPrimary}">
-
-                                    <Button ImageSource="{Binding Item.Image}"
-                                            WidthRequest="64"
-                                            HeightRequest="64"
-                                            BackgroundColor="{StaticResource DarkPrimary}">
-
-                                        <Button.Background>
-                                            <RadialGradientBrush>
-                                                <GradientStop Color="{StaticResource LightPrimary}"
-                                                    Offset="0.1"/>
-                                                <GradientStop Color="{StaticResource MidPrimary}"
-                                                    Offset="0.9"/>
-                                            </RadialGradientBrush>
-                                        </Button.Background>
-                                    </Button>
-                                </Frame>
-
-                                <Label Text="{Binding Count, Mode=OneWay}"
-                                       Padding="0, 0, 8, 4"
-                                       VerticalOptions="End"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
-                            </Grid>
-                        </ContentView>
-
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+            <ContentView Padding="12, 8"
+                         BackgroundColor="{StaticResource DarkPrimary}">
+                <Label FontSize="Large"
+                       Text="Inventory"/>
+            </ContentView>
             
-        </ScrollView>
+            <ScrollView>
+        
+                <FlexLayout BindableLayout.ItemsSource="{Binding InventoryService.Contents, Mode=OneWay}"
+                            Direction="Row"
+                            JustifyContent="Start"
+                            Wrap="Wrap"
+                            Margin="4">
+
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:ItemStack">
+
+                            <ContentView Margin="4, 0"
+                                         Padding="0, 4">
+
+                                <Grid HeightRequest="68">
+
+                                    <Frame CornerRadius="3"
+                                           Padding="4"
+                                           BackgroundColor="{StaticResource LightPrimary}">
+
+                                        <Button ImageSource="{Binding Item.Image}"
+                                                WidthRequest="64"
+                                                HeightRequest="64"
+                                                BackgroundColor="{StaticResource DarkPrimary}">
+
+                                            <Button.Background>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="{StaticResource LightPrimary}"
+                                                        Offset="0.1"/>
+                                                    <GradientStop Color="{StaticResource MidPrimary}"
+                                                        Offset="0.9"/>
+                                                </RadialGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                    </Frame>
+
+                                    <Label Text="{Binding Count, Mode=OneWay}"
+                                           Padding="0, 0, 8, 4"
+                                           VerticalOptions="End"
+                                           HorizontalOptions="End"
+                                           HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ContentView>
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+
+            </ScrollView>
+
+        </StackLayout>
     </ContentView.Content>
 </ContentView>
