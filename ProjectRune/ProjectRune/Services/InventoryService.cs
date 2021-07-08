@@ -13,13 +13,13 @@ namespace ProjectRune.Services
 {
     public class InventoryService
     {
-        private ModifiableObservableCollection<ItemStack> contents;
-        public ModifiableObservableCollection<ItemStack> Contents
+        private ObservableCollection<ItemStack> contents;
+        public ObservableCollection<ItemStack> Contents
         {
             get
             {
                 if (contents == null)
-                    contents = new ModifiableObservableCollection<ItemStack>();
+                    contents = new ObservableCollection<ItemStack>();
                 return contents;
             }
         }
