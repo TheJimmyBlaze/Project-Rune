@@ -19,8 +19,14 @@ namespace ProjectRune.Services
             get
             {
                 if (contents == null)
+                {
                     contents = new ObservableCollection<ItemStack>();
+                }
                 return contents;
+            }
+            set
+            {
+                contents = value;
             }
         }
 

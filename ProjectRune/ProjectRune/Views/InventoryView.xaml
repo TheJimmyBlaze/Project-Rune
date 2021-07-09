@@ -10,7 +10,7 @@
              IsVisible="{Binding DisplayInventoryView}">
 
     <ContentView.Content>
-        <StackLayout>
+        <StackLayout Spacing="0">
 
             <ContentView Padding="12, 8"
                          BackgroundColor="{StaticResource DarkPrimary}">
@@ -58,7 +58,8 @@
                                            Padding="0, 0, 8, 4"
                                            VerticalOptions="End"
                                            HorizontalOptions="End"
-                                           HorizontalTextAlignment="End"/>
+                                           HorizontalTextAlignment="End"
+                                           InputTransparent="True"/>
                                 </Grid>
                             </ContentView>
 
