@@ -11,12 +11,11 @@
 
     <ContentView.Content>
         <StackLayout Spacing="0">
-
-            <ContentView Padding="12, 8"
-                         BackgroundColor="{StaticResource DarkPrimary}">
-                <Label FontSize="Large"
-                       Text="Inventory"/>
-            </ContentView>
+            
+            <Label FontSize="Large"
+                    Text="Inventory"
+                    HorizontalTextAlignment="End"
+                    Margin="12, 8"/>
             
             <ScrollView>
         

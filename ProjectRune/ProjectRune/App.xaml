@@ -15,7 +15,6 @@
         <Color x:Key="BrightActive">#B74251</Color>
 
         <Color x:Key="YellowText">#FFB800</Color>
-        <Color x:Key="BlackBackground">#000001</Color>
 
         <RadialGradientBrush x:Key="ButtonGradient">
             <GradientStop Color="{StaticResource BrightPrimary}"

@@ -1,4 +1,5 @@
 ﻿using ProjectRune.Pages;
+using ProjectRune.Services.Events;
 using System;
 using Xamarin.Forms;
 
@@ -8,6 +9,7 @@ namespace ProjectRune.Services
     {
         public enum NavigationSheet
         {
+            Action,
             Skills,
             Inventory,
             Equipment,
@@ -20,13 +22,32 @@ namespace ProjectRune.Services
             get => activeNavigationSheet;
             set
             {
+                NavigationSheet previousSheet = activeNavigationSheet;
                 activeNavigationSheet = value;
-                OnActiveNavigationSheetChanged();
+                OnActiveNavigationSheetChanged(previousSheet);
             }
         }
 
-        public EventHandler ActiveNavigationSheetChanged;
-        private void OnActiveNavigationSheetChanged() => ActiveNavigationSheetChanged?.Invoke(this, null);
+        public bool DisplayQuickAction { get => ShouldDisplayQuickAction(activeNavigationSheet); }
+
+        public bool ShouldDisplayQuickAction(NavigationSheet activeSheet)
+        {
+            return activeSheet == NavigationSheet.Skills ||
+                activeSheet == NavigationSheet.Inventory ||
+                activeSheet == NavigationSheet.Equipment;
+        }
+
+        public EventHandler<NavigationSheetChangedEventArgs> ActiveNavigationSheetChanged;
+        private void OnActiveNavigationSheetChanged(NavigationSheet previousSheet)
+        {
+            NavigationSheetChangedEventArgs args = new NavigationSheetChangedEventArgs
+            {
+                PreviousSheet = previousSheet,
+                ActiveSheet = activeNavigationSheet
+            };
+            
+            ActiveNavigationSheetChanged?.Invoke(this, args);
+        }
 
         public void Initialize()
         {
