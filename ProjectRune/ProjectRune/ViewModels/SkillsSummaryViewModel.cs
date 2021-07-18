@@ -26,10 +26,10 @@ namespace ProjectRune.ViewModels
         {
             return new List<Skill>()
             {
-                new Skill() { NaturalID = "Attack" },
-                new Skill() { NaturalID = "Strength" },
-                new Skill() { NaturalID = "Defence" },
-                new Skill() { NaturalID = "Hitpoints" }
+                new Skill() { NaturalID = "attack" },
+                new Skill() { NaturalID = "strength" },
+                new Skill() { NaturalID = "defence" },
+                new Skill() { NaturalID = "hitpoints" }
             };
         }
 

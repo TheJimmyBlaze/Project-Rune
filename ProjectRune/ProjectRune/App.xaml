@@ -4,16 +4,36 @@
              x:Class="project_rune.App">
     <Application.Resources>
 
-        <Color x:Key="DarkBrown">#2D2B24</Color>
-        <Color x:Key="MidBrown">#3E3529</Color>
-        <Color x:Key="LightBrown">#726451</Color>
+        <Color x:Key="DarkPrimary">#26242D</Color>
+        <Color x:Key="MidPrimary">#292A3E</Color>
+        <Color x:Key="LightPrimary">#515272</Color>
+        <Color x:Key="BrightPrimary">#6B6B99</Color>
 
         <Color x:Key="MidGray">#52524D</Color>
 
-        <Color x:Key="Active">#7A2920</Color>
+        <Color x:Key="LightActive">#9B2D39</Color>
+        <Color x:Key="BrightActive">#B74251</Color>
 
-        <Color x:Key="YellowText">#C1C100</Color>
-        <Color x:Key="BlackBackground">#000001</Color>
-        
+        <Color x:Key="YellowText">#FFB800</Color>
+
+        <RadialGradientBrush x:Key="ButtonGradient">
+            <GradientStop Color="{StaticResource BrightPrimary}"
+                          Offset="0.1"/>
+            <GradientStop Color="{StaticResource LightPrimary}"
+                          Offset="0.9"/>
+        </RadialGradientBrush>
+
+        <RadialGradientBrush x:Key="ActiveButtonGradient">
+                    <GradientStop Color="{StaticResource BrightActive}"
+                                  Offset="0.1"/>
+                    <GradientStop Color="{StaticResource LightActive}"
+                                  Offset="0.9"/>
+        </RadialGradientBrush>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource YellowText}"/>
+            <Setter Property="FontFamily" Value="Runescape"/>
+        </Style>
+
     </Application.Resources>
 </Application>

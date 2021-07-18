@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base"
+             xmlns:services="clr-namespace:ProjectRune.Services"
+             x:DataType="viewModels:QuickActionViewModel"
+             x:Class="ProjectRune.Views.QuickActionView"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True">
+    
+    <ContentView.Content>
+
+        <Grid>
+            <ContentView>
+                <Button BackgroundColor="{StaticResource DarkPrimary}"/>
+            </ContentView>
+
+            <StackLayout Orientation="Horizontal"
+                         InputTransparent="True">
+
+                <Frame CornerRadius="3"
+                       Margin="8"
+                       Padding="8"
+                       Background="{StaticResource ButtonGradient}">
+                    
+                    <Image x:Name="SkillIcon"
+                           Source="skill_woodcutting"/>
+                </Frame>
+
+                <Label Text="Chopping Pines..." 
+                        FontSize="Large"
+                        VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <Image x:Name="Chevron"
+                   Source="chevron"
+                   Margin="16"
+                   HorizontalOptions="End"/>
+
+        </Grid>
+      
+    </ContentView.Content>
+    
+</ContentView>

@@ -1,4 +1,5 @@
-﻿using ProjectRune.ViewModels.Base;
+﻿using ProjectRune.Services;
+using ProjectRune.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,6 +14,10 @@ namespace ProjectRune.ViewModels
     {
         public NavigationSheet ActiveNavigationSheet { get => navService.ActiveNavigationSheet; }
         public ICommand SetActiveNavigationSheet => new Command<NavigationSheet>(active => navService.ActiveNavigationSheet = active);
+
+        private readonly InventoryService inventoryService = DependencyService.Get<InventoryService>();
+
+        public ICommand AddTestItem => new Command(delegate () { inventoryService.GenerateTestItem(); });
 
         public QuickMenuViewModel()
         {

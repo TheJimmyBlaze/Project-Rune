@@ -12,7 +12,7 @@
     <ContentView.Content>
         <ScrollView>
 
-            <FlexLayout BindableLayout.ItemsSource="{Binding Skills}"
+            <FlexLayout BindableLayout.ItemsSource="{Binding Skills, Mode=OneWay}"
                         Direction="Row"
                         JustifyContent="Center"
                         Wrap="Wrap"
@@ -22,23 +22,21 @@
                     <DataTemplate x:DataType="models:Skill">
 
                         <ContentView Margin="4, 0"
-                               Padding="0, 4"
-                               WidthRequest="384"
-                               BackgroundColor="Transparent">
+                                     Padding="0, 4"
+                                     WidthRequest="384"
+                                     BackgroundColor="Transparent">
 
                             <Grid>
 
                                 <Grid.Resources>
-                                    <Style TargetType="Label">
-                                        <Setter Property="TextColor" Value="{StaticResource YellowText}"/>
-                                        <Setter Property="FontFamily" Value="Runescape"/>
+                                    <Style TargetType="Label" BasedOn="{StaticResource Xamarin.Forms.Label}">
                                         <Setter Property="FontSize" Value="Large"/>
                                     </Style>
                                 </Grid.Resources>
 
                                 <!-- This guy's in a content view since he would otherwise cause wierd interactions with other controls on the grid whes pressed -->
                                 <ContentView>
-                                    <Button BackgroundColor="{StaticResource DarkBrown}"/>
+                                    <Button BackgroundColor="{StaticResource DarkPrimary}"/>
                                 </ContentView>
 
                                 <Label Text="{Binding DisplayName}"

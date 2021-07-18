@@ -13,21 +13,22 @@
         <StackLayout Orientation="Horizontal"
                      Spacing="10"
                      Padding="8"
-                     BackgroundColor="{StaticResource DarkBrown}">
+                     BackgroundColor="{StaticResource DarkPrimary}">
 
             <StackLayout.Resources>
 
                 <Style x:Key="MenuItemButton"
                        TargetType="Button">
                     <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-                    <Setter Property="BackgroundColor" Value="{StaticResource LightBrown}"/>
+                    <Setter Property="Background" Value="{StaticResource ButtonGradient}"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource LightActive}"/> <!-- This makes the clicky colour thingy the right colour -->
                 </Style>
 
             </StackLayout.Resources>
 
             <Button Command="{Binding SetActiveNavigationSheet}"
                     CommandParameter="{x:Static services:NavigationService+NavigationSheet.Skills}"
-                    ImageSource="Skills">
+                    ImageSource="skills">
                 <Button.Style>
                     <Style TargetType="Button"
                            BasedOn="{StaticResource MenuItemButton}">
@@ -35,7 +36,7 @@
                             <DataTrigger TargetType="Button"
                                          Binding="{Binding ActiveNavigationSheet}"
                                          Value="{x:Static services:NavigationService+NavigationSheet.Skills}">
-                                <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                <Setter Property="Background" Value="{StaticResource ActiveButtonGradient}"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -44,7 +45,7 @@
 
             <Button Command="{Binding SetActiveNavigationSheet}"
                     CommandParameter="{x:Static services:NavigationService+NavigationSheet.Inventory}"
-                    ImageSource="Inventory">
+                    ImageSource="inventory">
                 <Button.Style>
                     <Style TargetType="Button"
                            BasedOn="{StaticResource MenuItemButton}">
@@ -52,7 +53,7 @@
                             <DataTrigger TargetType="Button"
                                          Binding="{Binding ActiveNavigationSheet}"
                                          Value="{x:Static services:NavigationService+NavigationSheet.Inventory}">
-                                <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                <Setter Property="Background" Value="{StaticResource ActiveButtonGradient}"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -60,33 +61,35 @@
             </Button>
 
             <Button Command="{Binding SetActiveNavigationSheet}"
-                    CommandParameter="{x:Static services:NavigationService+NavigationSheet.Quests}"
-                    ImageSource="Quests">
+                    CommandParameter="{x:Static services:NavigationService+NavigationSheet.Equipment}"
+                    ImageSource="equipment">
                 <Button.Style>
                     <Style TargetType="Button"
                            BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
                                          Binding="{Binding ActiveNavigationSheet}"
-                                         Value="{x:Static services:NavigationService+NavigationSheet.Quests}">
-                                <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                         Value="{x:Static services:NavigationService+NavigationSheet.Equipment}">
+                                <Setter Property="Background" Value="{StaticResource ActiveButtonGradient}"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
 
-            <Button Command="{Binding SetActiveNavigationSheet}"
-                    CommandParameter="{x:Static services:NavigationService+NavigationSheet.ExtendedMenu}"
-                    ImageSource="Hamburger">
+            <!--<Button Command="{Binding SetActiveNavigationSheet}"
+                    CommandParameter="{x:Static services:NavigationService+NavigationSheet.Settings}"
+                    ImageSource="settings">-->
+            <Button Command="{Binding AddTestItem}"
+                    ImageSource="settings">
                 <Button.Style>
                     <Style TargetType="Button"
                            BasedOn="{StaticResource MenuItemButton}">
                         <Style.Triggers>
                             <DataTrigger TargetType="Button"
                                          Binding="{Binding ActiveNavigationSheet}"
-                                         Value="{x:Static services:NavigationService+NavigationSheet.ExtendedMenu}">
-                                <Setter Property="BackgroundColor" Value="{StaticResource Active}"/>
+                                         Value="{x:Static services:NavigationService+NavigationSheet.Settings}">
+                                <Setter Property="Background" Value="{StaticResource ActiveButtonGradient}"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>

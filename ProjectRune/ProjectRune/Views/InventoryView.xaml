@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ProjectRune.Models.ItemModels"
+             xmlns:viewModels="clr-namespace:ProjectRune.ViewModels"
+             xmlns:viewModelBase="clr-namespace:ProjectRune.ViewModels.Base" 
+             x:DataType="viewModels:InventoryViewModel"
+             x:Class="ProjectRune.Views.InventoryView"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="True"
+             IsVisible="{Binding DisplayInventoryView}">
+
+    <ContentView.Content>
+        <StackLayout Spacing="0">
+            
+            <Label FontSize="Large"
+                    Text="Inventory"
+                    HorizontalTextAlignment="End"
+                    Margin="12, 8"/>
+            
+            <ScrollView>
+        
+                <FlexLayout BindableLayout.ItemsSource="{Binding InventoryService.Contents, Mode=OneWay}"
+                            Direction="Row"
+                            JustifyContent="Start"
+                            Wrap="Wrap"
+                            Margin="4">
+
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:ItemStack">
+
+                            <ContentView Margin="4, 0"
+                                         Padding="0, 4">
+
+                                <Grid HeightRequest="68">
+
+                                    <Frame CornerRadius="3"
+                                           Padding="4"
+                                           BackgroundColor="{StaticResource LightPrimary}">
+
+                                        <Button ImageSource="{Binding Item.Image}"
+                                                WidthRequest="64"
+                                                HeightRequest="64"
+                                                BackgroundColor="{StaticResource DarkPrimary}">
+
+                                            <Button.Background>
+                                                <RadialGradientBrush>
+                                                    <GradientStop Color="{StaticResource LightPrimary}"
+                                                        Offset="0.1"/>
+                                                    <GradientStop Color="{StaticResource MidPrimary}"
+                                                        Offset="0.9"/>
+                                                </RadialGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                    </Frame>
+
+                                    <Label Text="{Binding Count, Mode=OneWay}"
+                                           Padding="0, 0, 8, 4"
+                                           VerticalOptions="End"
+                                           HorizontalOptions="End"
+                                           HorizontalTextAlignment="End"
+                                           InputTransparent="True"/>
+                                </Grid>
+                            </ContentView>
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+
+            </ScrollView>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

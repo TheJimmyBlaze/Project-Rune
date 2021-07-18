@@ -5,15 +5,25 @@
              xmlns:views="clr-namespace:ProjectRune.Views"
              x:Class="ProjectRune.Pages.MainPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="{StaticResource MidBrown}"
-                     Spacing="0">
+        <Grid BackgroundColor="{StaticResource MidPrimary}"
+              RowSpacing="0">
 
-            <views:QuickMenuView/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-            <views:SkillsSummaryView/>
+            <views:QuickActionView Grid.Row="0"/>
 
-            <Label Text="Boats"/>
+            <views:SkillsSummaryView Grid.Row="1"
+                                     VerticalOptions="Start"/>
 
-        </StackLayout>
+            <views:InventoryView Grid.Row="1"
+                                 VerticalOptions="Start"/>
+
+            <views:QuickMenuView Grid.Row="2"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
